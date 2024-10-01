@@ -127,7 +127,7 @@ while True:
             
 
             
-            # switch function for address book operations
+            # switch function for performing address book operations
             def command_operations(command):
                 if command == "ADD" and command_length == 4:
                     add_record() 
