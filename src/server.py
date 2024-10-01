@@ -58,6 +58,7 @@ while True:
                     except :  
                         current_address_data = [] 
                         id = 1001
+                        print("inside except ",id) 
                     
                     data_block = {
                         "id": str(id),
@@ -115,19 +116,22 @@ while True:
             
             # function to load address book in write mode
             def load_record_write(current_data):
+                print("load_record_write ")
+
                 with open('data.json', 'w') as file:
                     json.dump(current_data, file)
             
             
             # function to load address book in read mode
             def load_record_read():
+                 print("load_record_read ")
                  with open('data.json', 'r') as file:
                     current_data = json.load(file)
                     return current_data
             
 
             
-            # switch function for performing address book operations
+            # switch function for address book operations
             def command_operations(command):
                 if command == "ADD" and command_length == 4:
                     add_record() 
@@ -144,6 +148,9 @@ while True:
             
             # function call to do address command operations   
             command_operations(command)    
+                          
+           
+
             client_text = input_command_line.strip()
             client_output.write(input_command_line)
             client_output.flush()
